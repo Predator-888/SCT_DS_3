@@ -48,67 +48,6 @@ The script trains a Decision Tree Classifier and evaluates its performance on a 
 
 Overall Accuracy: 87.40%
 
-Classification Report
-Class
-
-Precision
-
-Recall
-
-F1-Score
-
-Support
-
-0 (No)
-
-0.93
-
-0.93
-
-0.93
-
-7952
-
-1 (Yes)
-
-0.48
-
-0.48
-
-0.48
-
-1091
-
-Accuracy
-
-
-
-
-
-0.87
-
-9043
-
-Macro Avg
-
-0.70
-
-0.70
-
-0.70
-
-9043
-
-Weighted Avg
-
-0.87
-
-0.87
-
-0.87
-
-9043
-
 Analysis of Results
 The model achieves a high overall accuracy, but this number is misleading. The classification report reveals a critical weakness:
 
