@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import LabelEncoder
+import matplotlib.pyplot as plt
+from sklearn import tree
 
 # --- DATA LOADING AND PREPARATION ---
 
@@ -37,6 +39,27 @@ y = df['y']
 # 5. Split the data into training and testing sets
 # 80% for training, 20% for testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# ---- ADD THIS CODE BLOCK ----
+
+# Get feature and class names
+feature_names = X.columns
+class_names = ['No', 'Yes'] # Assuming 'no' is 0 and 'yes' is 1
+
+# Set the figure size
+plt.figure(figsize=(25,10))
+
+# Plot the tree
+tree.plot_tree(dtree,
+               feature_names = feature_names,
+               class_names = class_names,
+               filled = True,
+               fontsize = 8)
+
+# Save the tree to a file
+plt.savefig('decision_tree.png', dpi=100)
+print("\nDecision tree visualization saved as decision_tree.png")
+# ---- END OF CODE BLOCK ----
+
 
 # 6. Initialize and train the Decision Tree model
 # random_state ensures we get the same result every time
